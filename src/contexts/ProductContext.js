@@ -1,9 +1,13 @@
 import React, { createContext, useState } from 'react';
 import data from '../data';
 
-const ProductContext = () => {
+export const ProductContext = createContext();
 
+export const ProductProvider = props => {
+    const [products] = useState(data);
     return (
-        "wow, such empty"
+        <ProductContext.Provider value={[products]}>
+            {props.children}
+        </ProductContext.Provider>
     );
 };
