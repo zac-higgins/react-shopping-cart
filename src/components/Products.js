@@ -8,7 +8,6 @@ import { CartContext } from '../contexts/CartContext';
 
 const Products = props => {
 	const [products] = useContext(ProductContext);
-	console.log("Here are the products:", products);
 	const [cart, setCart] = useContext(CartContext);
 	const addItem = item => {
 		setCart([...cart, item]);
